@@ -10,18 +10,25 @@ const client = useSupabaseClient()
     </a>
 
     <nav class="ml-auto mr-0 text-sm font-medium">
-      <NuxtLink to="/blog"
-        class="px-2 py-1 ml-auto mr-1 text-sm font-medium rounded hover:bg-charcoal-600 hover:text-white">
+      <NuxtLink
+        to="/blog"
+        class="px-2 py-1 ml-auto mr-1 text-sm font-medium rounded hover:bg-charcoal-600 hover:text-white"
+      >
         Demo Blog
       </NuxtLink>
 
-      <NuxtLink to="/notes"
-        class="px-2 py-1 ml-auto text-sm font-medium rounded hover:bg-charcoal-600 hover:text-white">
+      <NuxtLink
+        to="/notes"
+        class="px-2 py-1 ml-auto text-sm font-medium rounded hover:bg-charcoal-600 hover:text-white"
+      >
         Profile
       </NuxtLink>
 
-      <button v-if="user" @click="client.auth.signOut()"
-        class="px-2 py-1 text-sm font-medium rounded hover:bg-charcoal-600 underline">
+      <button
+        v-if="user"
+        class="px-2 py-1 text-sm font-medium rounded hover:bg-charcoal-600 underline"
+        @click="client.auth.signOut()"
+      >
         Log out
       </button>
     </nav>

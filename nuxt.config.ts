@@ -9,14 +9,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
-  buildModules: [
-    [
-      "@nuxtjs/eslint-module",
-      {
-        fix: true,
-      },
-    ],
-  ],
   components: true,
   content: {
     highlight: {

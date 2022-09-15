@@ -88,6 +88,6 @@
     "vue/space-infix-ops": "error",
     "vue/space-unary-ops": ["error", { "words": true, "nonwords": false }],
     "vue/template-curly-spacing": "error",
-    "vue/first-attribute-linebreak": ["error", "never"]
+    "vue/first-attribute-linebreak": ["error", { "multiline": "below" }]
   }
 }

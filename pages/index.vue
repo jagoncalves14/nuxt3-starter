@@ -5,7 +5,7 @@ useHead({
 </script>
 
 <template>
-  <main class="mt-8">
+  <main>
     <h1 class="text-3xl font-black text-white">Hi 👋</h1>
     <p class="mt-4">Welcome to the Homepage.</p>
     <p class="mt-4">
