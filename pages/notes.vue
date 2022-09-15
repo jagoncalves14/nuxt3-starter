@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  middleware: ['auth']
+  middleware: ['auth'],
 })
 const user = useSupabaseUser()
 onMounted(() => {
@@ -13,9 +13,10 @@ onMounted(() => {
 
 const { data: notes } = await useFetch('/api/notes', {
   key: `notes for ${user.value.id}`,
-  headers: useRequestHeaders(['cookie'])
+  headers: useRequestHeaders(['cookie']),
 })
 </script>
+
 <template>
   <div>
     <p class="mt-8 mb-16">Hello {{ user?.email }}</p>

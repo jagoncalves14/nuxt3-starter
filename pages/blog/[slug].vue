@@ -12,7 +12,7 @@ const { data } = await useAsyncData(`content-${route.path}`, () =>
   </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 main {
   @apply pt-7;
 }

@@ -8,10 +8,12 @@ const data = [
   { id: 4, email: 'notmatt@learnvue.co', content: 'mores tuff' },
 ]
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event: any) => {
   const user = await serverSupabaseUser(event)
   if (!user) {
     throw createError({ statusCode: 401, message: 'Unauthorized' })
   }
-  return data.filter((note) => note.email === user.email)
+  return data.filter((note: { id: number; email: string; content: string }) => {
+    return note.email === user.email
+  })
 })
