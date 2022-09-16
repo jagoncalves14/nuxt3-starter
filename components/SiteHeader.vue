@@ -18,10 +18,18 @@ const client = useSupabaseClient()
       </NuxtLink>
 
       <NuxtLink
+        v-if="user"
         to="/notes"
         class="px-2 py-1 ml-auto text-sm font-medium rounded hover:bg-charcoal-600 hover:text-white"
       >
         Profile
+      </NuxtLink>
+      <NuxtLink
+        v-else
+        to="/login"
+        class="px-2 py-1 ml-auto text-sm font-medium rounded hover:bg-charcoal-600 hover:text-white"
+      >
+        Login
       </NuxtLink>
 
       <button

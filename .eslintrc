@@ -5,12 +5,23 @@
     "node": true
   },
   "extends": [
-    "@nuxtjs/eslint-config-typescript", 
-    "plugin:nuxt/recommended", 
-    "plugin:prettier/recommended"
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:nuxt/recommended"
   ],
   "plugins": [],
-  "rules": {
+    "rules": {
+      "curly": [
+        "error",
+        "all"
+    ],
+    "brace-style": "off",
+    "@typescript-eslint/brace-style": [
+        "error",
+        "1tbs"
+    ],
+    "no-unused-vars": "error",
+
+    // # VUE RULES
     "vue/no-multiple-template-root": "off",
     "vue/max-attributes-per-line": "off",
     "vue/no-v-html": "off",
