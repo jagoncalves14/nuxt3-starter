@@ -6,7 +6,7 @@ const client = useSupabaseClient()
 <template>
   <header class="container flex items-center w-full h-16 py-8">
     <a href="/" class="flex items-center hover:opacity-80">
-      <img src="/logo-dark.svg" class="h-[24px] mr-2" />
+      <img src="/logo-dark.svg" class="h-[24px] mr-2">
     </a>
 
     <nav class="ml-auto mr-0 text-sm font-medium">

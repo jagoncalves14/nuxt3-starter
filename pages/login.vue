@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  middleware: ['auth'],
+  middleware: ['auth']
 })
 
 const email = ref('')
@@ -9,21 +9,19 @@ const isSignUp = ref(false)
 const client = useSupabaseClient()
 
 const signUp = async () => {
+  // eslint-disable-next-line
   const { user, error } = await client.auth.signUp({
     email: email.value,
-    password: password.value,
+    password: password.value
   })
-  console.log('user', user)
-  console.log('error', error)
 }
 
 const login = async () => {
+  // eslint-disable-next-line
   const { user, error } = await client.auth.signIn({
     email: email.value,
-    password: password.value,
+    password: password.value
   })
-  console.log('user', user)
-  console.log('error', error)
 }
 
 const user = useSupabaseUser()
@@ -38,10 +36,12 @@ onMounted(() => {
 
 <template>
   <div class="max-w-lg mx-auto mt-32">
-    <h1 class="text-3xl font-black text-white">{{ isSignUp ? 'Register' : 'Log in' }}</h1>
+    <h1 class="text-3xl font-black text-white">
+      {{ isSignUp ? 'Register' : 'Log in' }}
+    </h1>
     <form class="flex flex-col gap-2 mt-8" @submit.prevent="() => (isSignUp ? signUp() : login())">
-      <input v-model="email" type="email" placeholder="Email" class="p-2 text-white rounded bg-charcoal-600" />
-      <input v-model="password" type="password" placeholder="Password" class="p-2 text-white rounded bg-charcoal-600" />
+      <input v-model="email" type="email" placeholder="Email" class="p-2 text-white rounded bg-charcoal-600">
+      <input v-model="password" type="password" placeholder="Password" class="p-2 text-white rounded bg-charcoal-600">
       <button type="submit" class="p-2 font-medium text-white bg-green-500 rounded hover:bg-green-400">
         <span v-if="isSignUp">Sign up</span>
         <span v-else>Log in</span>

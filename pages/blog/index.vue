@@ -4,8 +4,12 @@ const { data: posts } = await useAsyncData('posts', () => queryContent('/blog').
 
 <template>
   <div>
-    <h1 class="text-3xl font-bold text-white">Example Blog</h1>
-    <p class="mt-2">This is a blog made with Nuxt Content.</p>
+    <h1 class="text-3xl font-bold text-white">
+      Example Blog
+    </h1>
+    <p class="mt-2">
+      This is a blog made with Nuxt Content.
+    </p>
     <ul class="grid grid-cols-12 gap-8 mt-8">
       <li
         v-for="post in posts"
