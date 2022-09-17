@@ -18,6 +18,12 @@ jobs:
           envkey_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           file_name: .env
 
+      - name: Verify envfile
+        run: |
+          TEST=$(cat .env)
+          echo "$TEST"
+          fi
+
       - name: Checkout
         uses: actions/checkout@v3
 
