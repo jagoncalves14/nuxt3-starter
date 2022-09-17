@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Create .env file
-        uses: SpicyPizza/create-envfile@v1.3.0
+        uses: SpicyPizza/create-envfile@v1.2.0
         with:
           envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           envkey_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
