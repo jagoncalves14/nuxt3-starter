@@ -23,7 +23,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 7
+          version: 7.5.2
           run_install: false
 
       - name: Get pnpm store directory
@@ -42,14 +42,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - uses: pnpm/action-setup@v2.2.2
-      - name: Use Node.js 16.14.2
+      - name: Use Node.js 14.20.0
         uses: actions/setup-node@v3
         with:
-          node-version: 16.14.2
+          node-version: 14.20.0
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
       - name: Run Lint
         run: pnpm run lint
 
