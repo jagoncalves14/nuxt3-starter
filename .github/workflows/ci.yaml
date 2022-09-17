@@ -14,8 +14,8 @@ jobs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3.0
         with:
-          envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          envkey_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           file_name: .env
 
       - name: Checkout
