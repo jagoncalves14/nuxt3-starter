@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Creante .env file
-        uses: SpicyPizza/create-envfile@v1
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v1.3.0
         with:
           envkey_DEBUG: true
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          envkey_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           file_name: .env
       - run: echo "$(cat .env)"
 
