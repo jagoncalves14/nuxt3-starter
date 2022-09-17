@@ -14,11 +14,9 @@ jobs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3.0
         with:
-          envkey_DEBUG: true
           envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           envkey_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           file_name: .env
-      - run: echo "$(cat .env)"
 
       - name: Checkout
         uses: actions/checkout@v3
