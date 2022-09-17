@@ -7,22 +7,18 @@ on:
     branches: [main]
 
 jobs:
-  create-envfile:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Make envfile
-      uses: SpicyPizza/create-envfile@v1
-      with:
-        envkey_DEBUG: false
-        envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-        envkey_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        file_name: .env
-
   cache-and-install:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Creante .env file
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_DEBUG: true
+          envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          envkey_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          file_name: .env
+
       - name: Checkout
         uses: actions/checkout@v3
 
