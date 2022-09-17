@@ -17,8 +17,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
-      - run: npm ci
+      - run: pnpm ci
 
-      - run: npm run build
-
-      - run: npm run test
+      - run: pnpm run build
